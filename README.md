@@ -1,2 +1,2 @@
-# Import_Calc_Jud
+# Importação de dados para cálculos judiciais
 Programa para importação de dados de cálculos judiciais
