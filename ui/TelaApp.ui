@@ -268,7 +268,7 @@
                       <object class="ttk.Panedwindow.Pane" id="pane3">
                         <property name="weight">1</property>
                         <child>
-                          <object class="pygubu.builder.widgets.tkinterscrolledtext" id="texto_saida_parametros">
+                          <object class="pygubu.builder.widgets.tkinterscrolledtext" id="texto_entrada_parametros">
                             <layout manager="pack">
                               <property name="side">top</property>
                             </layout>
@@ -323,7 +323,7 @@
                       <property name="side">top</property>
                     </layout>
                     <child>
-                      <object class="tk.Text" id="text1">
+                      <object class="tk.Text" id="texto_saida_parametros">
                         <property name="background">#404040</property>
                         <property name="foreground">#ffff00</property>
                         <property name="height">10</property>

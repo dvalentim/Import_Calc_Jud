@@ -1,10 +1,14 @@
-from modulos import *
-from cria_arquivo_txt import *
-from ident_google import *
-from decisao import *
-from deletar import *
+import pathlib
+import pygubu
+import tkinter as tk
+import tkinter.ttk as ttk
+from tkinter.scrolledtext import ScrolledText
 
-class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar):
+PROJECT_PATH = pathlib.Path(__file__).parent
+PROJECT_UI = PROJECT_PATH / "TelaApp.ui"
+
+
+class TelaappApp:
     def __init__(self, master=None):
         # build ui
         self.base = ttk.Notebook(master)
@@ -33,9 +37,9 @@ class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar):
         self.bt_link.pack(pady='10', side='top')
         self.bt_link.configure(command=self.id_google)
         self.rdbt_opcao = tk.Radiobutton(self.frame2)
-        self.valor_check = tk.IntVar(value = 1)
+        self.valor_check = tk.IntVar(value=1)
         self.rdbt_opcao.configure(background='#dcdcdc', font='{Arial} 12 {}', overrelief='flat', text='Altera dados da Sheets')
-        self.rdbt_opcao.configure(value = '1', variable=self.valor_check)
+        self.rdbt_opcao.configure(value='1', variable=self.valor_check)
         self.rdbt_opcao.pack(pady='10', side='top')
         self.radiobutton2 = tk.Radiobutton(self.frame2)
         self.radiobutton2.configure(background='#dcdcdc', font='{Arial} 12 {}', text='Gera pdf com os dados', variable=self.valor_check)
@@ -91,7 +95,7 @@ class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar):
         self.painel_2.add(self.panedwindow1, weight='1')
         self.frame1 = ttk.Frame(self.painel_2)
         self.bt_export_parametros = ttk.Button(self.frame1)
-        self.bt_export_parametros.configure(text='ExpPar√¢metros')
+        self.bt_export_parametros.configure(text='ExpPar‚metros')
         self.bt_export_parametros.pack(padx='5', side='left')
         self.bt_apagar_parametros = ttk.Button(self.frame1)
         self.bt_apagar_parametros.configure(text='Apagar')
@@ -110,7 +114,32 @@ class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar):
         self.painel_2.add(self.frame4, weight='1')
         self.painel_2.configure(height='200', width='200')
         self.painel_2.pack(side='top')
-        self.base.add(self.painel_2, text='Par√¢metros')
+        self.base.add(self.painel_2, text='Par‚metros')
         self.base.configure(height='600', width='600')
         self.base.pack(side='top')
-        
+
+        # Main widget
+        self.mainwindow = self.base
+    
+    def run(self):
+        self.mainwindow.mainloop()
+
+    def id_google(self):
+        pass
+
+    def opcoes(self):
+        pass
+
+    def cria_txt(self):
+        pass
+
+    def apagar(self):
+        pass
+
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    app = TelaappApp(root)
+    app.run()
+
+
