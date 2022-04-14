@@ -1,0 +1,5 @@
+__pycache__
+.idea
+env
+*.json
+Dados_Import.txt
