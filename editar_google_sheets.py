@@ -89,14 +89,15 @@ class Edita_Sheets:
             #Subseção
             self.conf_usuario('Atrasados')
 
-        self.texto_saida.delete("1.0", END)
-        self.texto_saida.insert(END, f'Planilha do Google {self.nome_sheets} modificada\n')
-        self.texto_saida.insert(END, f'Informado:\n')
-        self.texto_saida.insert(END, f'nº do processo......: {self.nprocesso}\n')
-        self.texto_saida.insert(END, f'nome do autor.......: {self.nautor}\n')
-        self.texto_saida.insert(END, f'nome do reu.........: {self.nreu}\n')
-        self.texto_saida.insert(END, f'data do protocolo...: {self.dajuizamanto}\n')
-        self.texto_saida.insert(END, f'data da citação.....: {self.dcitacao}\n')
-        self.texto_saida.insert(END, f'Data de nascimento..: {self.dnascimento}\n')
+        self.texto_saida.delete("1.0", tk.END)
+        self.texto_saida.insert(tk.END, f'Planilha do Google {self.nome_sheets} modificada\n')
+        self.texto_saida.insert(tk.END, f'Informado:\n')
+        self.texto_saida.insert(tk.END, f'nº do processo......: {self.nprocesso}\n')
+        self.texto_saida.insert(tk.END, f'órgão julgador......: {self.nvara}\n')
+        self.texto_saida.insert(tk.END, f'nome do autor.......: {self.nautor}\n')
+        self.texto_saida.insert(tk.END, f'nome do reu.........: {self.nreu}\n')
+        self.texto_saida.insert(tk.END, f'data do protocolo...: {self.dajuizamanto}\n')
+        self.texto_saida.insert(tk.END, f'data da citação.....: {self.dcitacao}\n')
+        if titulo == '(TC)' or titulo == '(RMI)':
+            self.texto_saida.insert(tk.END, f'Data de nascimento..: {self.dnascimento}\n')
     
-

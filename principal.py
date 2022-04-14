@@ -2,6 +2,6 @@
 from telaApp import *
 
 if __name__ == '__main__':
-    root = Tk()
+    root = tk.Tk()
     app = TelaApp(master = root)
     root.mainloop()

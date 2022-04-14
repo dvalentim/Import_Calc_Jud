@@ -7,7 +7,7 @@ import os.path
 import pathlib
 from statistics import mode
 import tkinter.ttk as ttk
-from tkinter import *
+import tkinter as tk
 import PyPDF2
 from tkinter.scrolledtext import ScrolledText
 from tkinter import filedialog

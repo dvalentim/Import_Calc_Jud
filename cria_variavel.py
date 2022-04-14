@@ -3,17 +3,9 @@ from protocolo import *
 
 class Quebra_Identidade(Data_Protocolo):
     def imprimir_texto_saida(self):
-        # self.texto_saida.insert(END, f'Processo nº........: {self.nprocesso}\n')
-        # self.texto_saida.insert(END, f'Nome do autor......: {self.nautor}\n')
-        # self.texto_saida.insert(END, f'Nome do reu........: {self.nreu}\n')
-        # self.texto_saida.insert(END, f'JEF................: {self.nvara}\n')
-        # self.texto_saida.insert(END, f'Assunto............: {self.vassunto}\n')
-        # self.texto_saida.insert(END, f'Valor da Causa.....: {self.vcausa}\n')
-        # self.texto_saida.insert(END, f'Data da citação....: {self.dcitacao}\n')
-        #self.bt_verprocesso['state'] = DISABLED
         self.bt_verprocesso['text'] = "+Protocolo"
         self.bt_verprocesso['command'] = self.data_ajuizamento
-        self.texto_saida.insert(END, f'Informe a data do protocolo no campo acima...\n')
+        self.texto_saida.insert(tk.END, f'Informe a data do protocolo no campo acima...\n')
 
 
     def quebra_identidade(self):
@@ -67,11 +59,11 @@ class Quebra_Identidade(Data_Protocolo):
                 posicao1 = posicao1 - 2
                 posicao2 = posicao1 + 10
                 self.dcitacao = citacao[posicao1:posicao2]
-            self.texto_saida.delete("1.0", END)
+            self.texto_saida.delete("1.0", tk.END)
             self.imprimir_texto_saida()
-            self.texto_entrada.delete("1.0", END)
+            self.texto_entrada.delete("1.0", tk.END)
 
         else:
-            self.texto_entrada.delete("1.0", END)
-            self.texto_saida.delete("1.0", END)
-            self.texto_saida.insert(END, f'Texto digitado não é válido!!!')
+            self.texto_entrada.delete("1.0", tk.END)
+            self.texto_saida.delete("1.0", tk.END)
+            self.texto_saida.insert(tk.END, f'Texto digitado não é válido!!!')

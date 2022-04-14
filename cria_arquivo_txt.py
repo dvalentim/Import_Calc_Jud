@@ -8,6 +8,6 @@ class Cria_Arquivo_Txt(Importar_Processo):
         self.caminho = os.path.dirname(__file__)
         self.nomeArquivo = self.caminho + "//Dados_Import.txt"
         self.Arquivo = open(self.nomeArquivo, "w", encoding="utf-8")
-        self.Arquivo.write(self.texto_entrada.get("1.0", END))
+        self.Arquivo.write(self.texto_entrada.get("1.0", tk.END))
         self.Arquivo.close()
         self.importar() 

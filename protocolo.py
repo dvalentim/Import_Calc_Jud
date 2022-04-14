@@ -4,7 +4,7 @@ from adiciona_cnis import *
 class Data_Protocolo(Dados_CNIS):
     def data_ajuizamento(self):
         with open("Dados_Import.txt", 'w', encoding="utf-8") as manipulador:
-            manipulador.write(self.texto_entrada.get("1.0", END))
+            manipulador.write(self.texto_entrada.get("1.0", tk.END))
         self.busca_dprotocolo()
 
     def formatar_data(self, data):
@@ -57,24 +57,14 @@ class Data_Protocolo(Dados_CNIS):
             with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
                 frase = manipulador.readlines()[contador]
             self.formatar_data(frase)
-            # self.texto_saida.delete("1.0", END)
-            # self.texto_entrada.delete("1.0", END)
-            # self.texto_saida.insert(END, f'Processo nº........: {self.nprocesso}\n')
-            # self.texto_saida.insert(END, f'Nome do autor......: {self.nautor}\n')
-            # self.texto_saida.insert(END, f'Nome do reu........: {self.nreu}\n')
-            # self.texto_saida.insert(END, f'JEF................: {self.nvara}\n')
-            # self.texto_saida.insert(END, f'Assunto............: {self.vassunto}\n')
-            # self.texto_saida.insert(END, f'Valor da Causa.....: {self.vcausa}\n')
-            # self.texto_saida.insert(END, f'Data do protocolo..: {self.dajuizamanto}\n')
-            # self.texto_saida.insert(END, f'Data da citação....: {self.dcitacao}\n')
-            self.texto_saida.delete("1.0", END)
-            self.texto_entrada.delete("1.0", END)
-            self.texto_saida.insert(END, f'Informe os dados do CNIS\n')
+            self.texto_saida.delete("1.0", tk.END)
+            self.texto_entrada.delete("1.0", tk.END)
+            self.texto_saida.insert(tk.END, f'Informe os dados do CNIS\n')
             self.bt_verprocesso['text'] = "+CNIS"
             self.bt_verprocesso['command'] = self.ad_cnis
             
 
         else:
-            self.texto_saida.delete("1.0", END)
-            self.texto_saida.insert(END, f'Informe os dados do PJe\n')
+            self.texto_saida.delete("1.0", tk.END)
+            self.texto_saida.insert(tk.END, f'Informe os dados do PJe\n')
         

@@ -7,7 +7,7 @@ class Id_Google():
         #Captura o ID da Sheets
         #--------------------------
         if self.entrada_link.get() != '':
-            self.texto_saida.delete("1.0", END)
+            self.texto_saida.delete("1.0", tk.END)
             self.imprimir_texto_saida()
             link = self.entrada_link.get()
             a = link.rfind('/')
@@ -30,11 +30,11 @@ class Id_Google():
                 # pela primeira vez.
                 if os.path.exists('token.json'):  # Caso exista uma credencial valida (tolken.json) ele carrega
                     self.creds = Credentials.from_authorized_user_file('token.json', self.SCOPES)
-                    self.texto_saida.delete("1.0", END)
-                    self.texto_saida.insert(END, f'Link parece estar correto...\n')
-                    self.texto_saida.insert(END, f'Informe se deseja editar a Sheets ou Gerar pdf...\n')
-                    self.bt_link['state'] = DISABLED
-                    self.bt_opcoes['state'] = NORMAL
+                    self.texto_saida.delete("1.0", tk.END)
+                    self.texto_saida.insert(tk.END, f'Link parece estar correto...\n')
+                    self.texto_saida.insert(tk.END, f'Informe se deseja editar a Sheets ou Gerar pdf...\n')
+                    self.bt_link['state'] = tk.DISABLED
+                    self.bt_opcoes['state'] = tk.NORMAL
                     
                 # Caso não exista uma credencial o ususário fará o login.
                 if not self.creds or not self.creds.valid:  #
@@ -47,18 +47,18 @@ class Id_Google():
                     # Sava a credencial para a próxima execução
                     with open('token.json', 'w') as token:
                         token.write(self.creds.to_json())
-                    self.texto_saida.delete("1.0", END)
-                    self.texto_saida.insert(END, f'Link parece estar correto...\n')
-                    self.texto_saida.insert(END, f'Informe se deseja editar a Sheets ou Gerar pdf...\n')
-                    self.bt_link['state'] = DISABLED
-                    self.rdbt_opcao['state'] = NORMAL
-                    self.bt_opcoes['state'] = NORMAL
+                    self.texto_saida.delete("1.0", tk.END)
+                    self.texto_saida.insert(tk.END, f'Link parece estar correto...\n')
+                    self.texto_saida.insert(tk.END, f'Informe se deseja editar a Sheets ou Gerar pdf...\n')
+                    self.bt_link['state'] = tk.DISABLED
+                    self.rdbt_opcao['state'] = tk.NORMAL
+                    self.bt_opcoes['state'] = tk.NORMAL
 
             else:
-                self.texto_saida.delete("1.0", END)
-                self.texto_saida.insert(END, f'Informe o link da Sheets corretamente...')
+                self.texto_saida.delete("1.0", tk.END)
+                self.texto_saida.insert(tk.END, f'Informe o link da Sheets corretamente...')
                 self.entrada_link.delete(0, 'end')
         else:
-            self.texto_saida.delete("1.0", END)
-            self.texto_saida.insert(END, f'Informe o link da Sheets...')
+            self.texto_saida.delete("1.0", tk.END)
+            self.texto_saida.insert(tk.END, f'Informe o link da Sheets...')
             

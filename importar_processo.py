@@ -59,3 +59,4 @@ class Importar_Processo(Quebra_Identidade):
                 frase = manipulador.readlines()[contador2 - 1]
                 self.identidade.append(frase.rstrip())
         self.quebra_identidade()
+        
