@@ -34,7 +34,7 @@ class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar):
         self.bt_link.configure(command=self.id_google)
         self.rdbt_opcao = tk.Radiobutton(self.frame2)
         self.valor_check = tk.IntVar(value = 1)
-        self.rdbt_opcao.configure(background='#dcdcdc', font='{Arabic Transparent} 12 {}', overrelief='flat', text='Altera dados da Sheets')
+        self.rdbt_opcao.configure(background='#dcdcdc', font='{Arial} 12 {}', overrelief='flat', text='Altera dados da Sheets')
         self.rdbt_opcao.configure(value = '1', variable=self.valor_check)
         self.rdbt_opcao.pack(pady='10', side='top')
         self.radiobutton2 = tk.Radiobutton(self.frame2)

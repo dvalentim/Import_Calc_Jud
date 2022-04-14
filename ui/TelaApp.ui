@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="ttk.Notebook" id="base">
+    <property name="height">600</property>
+    <property name="width">600</property>
+    <layout manager="pack">
+      <property name="side">top</property>
+    </layout>
+    <child>
+      <object class="ttk.Notebook.Tab" id="tb_imp_txt">
+        <property name="text" translatable="yes">ImpProc</property>
+        <child>
+          <object class="ttk.Panedwindow" id="painel_1">
+            <property name="height">200</property>
+            <property name="orient">vertical</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="side">top</property>
+            </layout>
+            <child>
+              <object class="ttk.Panedwindow.Pane" id="cabecalho">
+                <property name="weight">2</property>
+                <child>
+                  <object class="ttk.Frame" id="moldura_legenda">
+                    <property name="height">200</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Label" id="legenda_1">
+                        <property name="font">{Arial} 12 {}</property>
+                        <property name="text" translatable="yes">Informe os dados a importar</property>
+                        <layout manager="pack">
+                          <property name="pady">20</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Panedwindow.Pane" id="entrada_e_opcoes">
+                <property name="weight">12</property>
+                <child>
+                  <object class="ttk.Panedwindow" id="panedwindow3">
+                    <property name="height">200</property>
+                    <property name="orient">horizontal</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Panedwindow.Pane" id="janela_texto">
+                        <property name="weight">12</property>
+                        <child>
+                          <object class="pygubu.builder.widgets.tkinterscrolledtext" id="texto_entrada">
+                            <property name="font">{Arial} 12 {}</property>
+                            <layout manager="pack">
+                              <property name="side">top</property>
+                            </layout>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Panedwindow.Pane" id="pane6">
+                        <property name="weight">0</property>
+                        <child>
+                          <object class="ttk.Frame" id="frame2">
+                            <property name="height">200</property>
+                            <property name="width">200</property>
+                            <layout manager="pack">
+                              <property name="side">top</property>
+                            </layout>
+                            <child>
+                              <object class="tk.Label" id="lb_link">
+                                <property name="background">#dcdcdc</property>
+                                <property name="font">{Arial} 12 {}</property>
+                                <property name="text" translatable="yes">Informe o link da planilha</property>
+                                <layout manager="pack">
+                                  <property name="pady">10</property>
+                                  <property name="side">top</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="tk.Entry" id="entrada_link">
+                                <property name="relief">flat</property>
+                                <property name="state">normal</property>
+                                <property name="width">30</property>
+                                <layout manager="pack">
+                                  <property name="pady">10</property>
+                                  <property name="side">top</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="ttk.Button" id="bt_link">
+                                <property name="command" type="command" cbtype="simple">id_google</property>
+                                <property name="state">disabled</property>
+                                <property name="text" translatable="yes">OK</property>
+                                <layout manager="pack">
+                                  <property name="pady">10</property>
+                                  <property name="side">top</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="tk.Radiobutton" id="rdbt_opcao">
+                                <property name="background">#dcdcdc</property>
+                                <property name="font">{Arial} 12 {}</property>
+                                <property name="overrelief">flat</property>
+                                <property name="text" translatable="yes">Altera dados da Sheets</property>
+                                <property name="value">1</property>
+                                <property name="variable">int:valor_check</property>
+                                <layout manager="pack">
+                                  <property name="pady">10</property>
+                                  <property name="side">top</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="tk.Radiobutton" id="radiobutton2">
+                                <property name="background">#dcdcdc</property>
+                                <property name="font">{Arial} 12 {}</property>
+                                <property name="text" translatable="yes">Gera pdf com os dados</property>
+                                <property name="variable">int:valor_check</property>
+                                <layout manager="pack">
+                                  <property name="pady">10</property>
+                                  <property name="side">top</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="ttk.Button" id="bt_opcoes">
+                                <property name="command" type="command" cbtype="simple">opcoes</property>
+                                <property name="state">disabled</property>
+                                <property name="text" translatable="yes">OK</property>
+                                <layout manager="pack">
+                                  <property name="pady">10</property>
+                                  <property name="side">top</property>
+                                </layout>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Panedwindow.Pane" id="pane4">
+                <property name="weight">1</property>
+                <child>
+                  <object class="ttk.Frame" id="fr_botoes">
+                    <property name="height">200</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Button" id="bt_verprocesso">
+                        <property name="command" type="command" cbtype="simple">cria_txt</property>
+                        <property name="text" translatable="yes">VerProcesso</property>
+                        <layout manager="pack">
+                          <property name="padx">5</property>
+                          <property name="side">left</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Button" id="bt_apagar">
+                        <property name="command" type="command" cbtype="simple">apagar</property>
+                        <property name="text" translatable="yes">Apagar</property>
+                        <layout manager="pack">
+                          <property name="padx">5</property>
+                          <property name="side">left</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Panedwindow.Pane" id="pane1">
+                <property name="weight">1</property>
+                <child>
+                  <object class="ttk.Frame" id="fr_saida">
+                    <property name="height">200</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="tk.Text" id="texto_saida">
+                        <property name="background">#404040</property>
+                        <property name="foreground">#ffff00</property>
+                        <property name="height">10</property>
+                        <property name="text" translatable="yes">Saidas...</property>
+                        <property name="width">50</property>
+                        <layout manager="pack">
+                          <property name="fill">x</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Notebook.Tab" id="parametros">
+        <property name="text" translatable="yes">Parâmetros</property>
+        <child>
+          <object class="ttk.Panedwindow" id="painel_2">
+            <property name="height">200</property>
+            <property name="orient">vertical</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="side">top</property>
+            </layout>
+            <child>
+              <object class="ttk.Panedwindow.Pane" id="cabecalho_parametros">
+                <property name="weight">1</property>
+                <child>
+                  <object class="ttk.Frame" id="titulo_parametros">
+                    <property name="height">200</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Label" id="legenda_parametros">
+                        <property name="font">{Arial} 12 {}</property>
+                        <property name="text" translatable="yes">Informe a imagem a ser processada</property>
+                        <layout manager="pack">
+                          <property name="pady">20</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Panedwindow.Pane" id="pane7">
+                <property name="weight">1</property>
+                <child>
+                  <object class="ttk.Panedwindow" id="panedwindow1">
+                    <property name="height">200</property>
+                    <property name="orient">horizontal</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Panedwindow.Pane" id="pane3">
+                        <property name="weight">1</property>
+                        <child>
+                          <object class="pygubu.builder.widgets.tkinterscrolledtext" id="texto_saida_parametros">
+                            <layout manager="pack">
+                              <property name="side">top</property>
+                            </layout>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Panedwindow.Pane" id="pane8">
+                <property name="weight">1</property>
+                <child>
+                  <object class="ttk.Frame" id="frame1">
+                    <property name="height">200</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Button" id="bt_export_parametros">
+                        <property name="text" translatable="yes">ExpParâmetros</property>
+                        <layout manager="pack">
+                          <property name="padx">5</property>
+                          <property name="side">left</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Button" id="bt_apagar_parametros">
+                        <property name="text" translatable="yes">Apagar</property>
+                        <layout manager="pack">
+                          <property name="padx">5</property>
+                          <property name="side">left</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Panedwindow.Pane" id="pane5">
+                <property name="weight">1</property>
+                <child>
+                  <object class="ttk.Frame" id="frame4">
+                    <property name="height">200</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="tk.Text" id="text1">
+                        <property name="background">#404040</property>
+                        <property name="foreground">#ffff00</property>
+                        <property name="height">10</property>
+                        <property name="text" translatable="yes">Saidas...</property>
+                        <property name="width">50</property>
+                        <layout manager="pack">
+                          <property name="fill">x</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
