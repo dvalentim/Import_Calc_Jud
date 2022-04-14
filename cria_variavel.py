@@ -24,42 +24,42 @@ class Quebra_Identidade(Data_Protocolo):
             posicao1 = posicao1 + 2
             posicao2 = len(numero)
             self.nprocesso = numero[posicao1:posicao2]
-            #print(self.nprocesso)
+    
             #Vara do processo
             vara = self.identidade[1]
             posicao1 = vara.find(':')
             posicao1 = posicao1 + 2
             posicao2 = len(vara)
             self.nvara = vara[posicao1:posicao2]
-            #print(self.nvara)
+            
             #Valor da causa
             causa = self.identidade[2]
             posicao1 = causa.find('$')
             posicao1 = posicao1 + 2
             posicao2 = len(causa)
             self.vcausa = causa[posicao1:posicao2]
-            #print(self.vcausa)
+           
             #Assunto
             assunto = self.identidade[3]
             posicao1 = assunto.find(':')
             posicao1 = posicao1 + 2
             posicao2 = len(assunto)
             self.vassunto = assunto[posicao1:posicao2]
-            #print(self.vassunto)
+            
             # Captura o nome do Autor
             autor = self.identidade[4]
             posicao1 = 0
             posicao2 = autor.find('(')
             posicao2 = posicao2 - 1
             self.nautor = autor[posicao1:posicao2]
-            #print(self.nautor)
+            
             # Captura o nome do Réu
             reu = self.identidade[5]
             posicao1 = 0
             posicao2 = reu.find('(')
             posicao2 = posicao2 - 1
             self.nreu = reu[posicao1:posicao2]
-            #print(self.nreu)
+            
             #Captura a data da citação
             if len(self.identidade) == 7:
                 citacao = self.identidade[6]
