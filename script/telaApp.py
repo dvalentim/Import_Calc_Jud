@@ -3,8 +3,9 @@ from cria_arquivo_txt import *
 from ident_google import *
 from decisao import *
 from deletar import *
+from parametros import *
 
-class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar):
+class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar, Parametros):
     def __init__(self, master=None):
         # build ui
         self.base = ttk.Notebook(master)
@@ -77,7 +78,7 @@ class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar):
         self.painel_2 = ttk.Panedwindow(self.base, orient='vertical')
         self.titulo_parametros = ttk.Frame(self.painel_2)
         self.legenda_parametros = ttk.Label(self.titulo_parametros)
-        self.legenda_parametros.configure(font='{Arial} 12 {}', text='Informe a imagem a ser processada')
+        self.legenda_parametros.configure(font='{Arial} 12 {}', text='Informe os dados a importar')
         self.legenda_parametros.pack(pady='20', side='top')
         self.titulo_parametros.configure(height='200', width='200')
         self.titulo_parametros.pack(side='top')
@@ -93,6 +94,7 @@ class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar):
         self.bt_export_parametros = ttk.Button(self.frame1)
         self.bt_export_parametros.configure(text='ExpParâmetros')
         self.bt_export_parametros.pack(padx='5', side='left')
+        self.bt_export_parametros.configure(command=self.exp_parametros)
         self.bt_apagar_parametros = ttk.Button(self.frame1)
         self.bt_apagar_parametros.configure(text='Apagar')
         self.bt_apagar_parametros.pack(padx='5', side='left')

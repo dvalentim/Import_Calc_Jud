@@ -81,7 +81,7 @@ class TelaappApp:
         self.painel_2 = ttk.Panedwindow(self.base, orient='vertical')
         self.titulo_parametros = ttk.Frame(self.painel_2)
         self.legenda_parametros = ttk.Label(self.titulo_parametros)
-        self.legenda_parametros.configure(font='{Arial} 12 {}', text='Informe a imagem a ser processada')
+        self.legenda_parametros.configure(font='{Arial} 12 {}', text='Informe os dados a importar')
         self.legenda_parametros.pack(pady='20', side='top')
         self.titulo_parametros.configure(height='200', width='200')
         self.titulo_parametros.pack(side='top')
@@ -97,6 +97,7 @@ class TelaappApp:
         self.bt_export_parametros = ttk.Button(self.frame1)
         self.bt_export_parametros.configure(text='ExpParâmetros')
         self.bt_export_parametros.pack(padx='5', side='left')
+        self.bt_export_parametros.configure(command=self.exp_parametros)
         self.bt_apagar_parametros = ttk.Button(self.frame1)
         self.bt_apagar_parametros.configure(text='Apagar')
         self.bt_apagar_parametros.pack(padx='5', side='left')
@@ -134,6 +135,9 @@ class TelaappApp:
         pass
 
     def apagar(self):
+        pass
+
+    def exp_parametros(self):
         pass
 
 

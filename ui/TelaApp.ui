@@ -242,7 +242,7 @@
                     <child>
                       <object class="ttk.Label" id="legenda_parametros">
                         <property name="font">{Arial} 12 {}</property>
-                        <property name="text" translatable="yes">Informe a imagem a ser processada</property>
+                        <property name="text" translatable="yes">Informe os dados a importar</property>
                         <layout manager="pack">
                           <property name="pady">20</property>
                           <property name="side">top</property>
@@ -292,6 +292,7 @@
                     </layout>
                     <child>
                       <object class="ttk.Button" id="bt_export_parametros">
+                        <property name="command" type="command" cbtype="simple">exp_parametros</property>
                         <property name="text" translatable="yes">ExpParâmetros</property>
                         <layout manager="pack">
                           <property name="padx">5</property>
