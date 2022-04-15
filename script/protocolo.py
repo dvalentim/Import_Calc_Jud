@@ -3,7 +3,7 @@ from adiciona_cnis import *
 
 class Data_Protocolo(Dados_CNIS):
     def data_ajuizamento(self):
-        with open("Dados_Import.txt", 'w', encoding="utf-8") as manipulador:
+        with open("script/Dados_Import.txt", 'w', encoding="utf-8") as manipulador:
             manipulador.write(self.texto_entrada.get("1.0", tk.END))
         self.busca_dprotocolo()
 
@@ -47,14 +47,14 @@ class Data_Protocolo(Dados_CNIS):
     def busca_dprotocolo(self):
         identidade_protocolo = []
         contador = 0
-        with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+        with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
             for linha in manipulador:
                 contador = contador + 1
                 if 'Autuação' in linha:
                     identidade_protocolo.append(linha)
                     break
         if identidade_protocolo != []:
-            with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+            with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
                 frase = manipulador.readlines()[contador]
             self.formatar_data(frase)
             self.texto_saida.delete("1.0", tk.END)

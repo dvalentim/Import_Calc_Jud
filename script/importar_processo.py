@@ -9,7 +9,7 @@ class Importar_Processo(Quebra_Identidade):
         contador1 = 0
         contador2 = 0
 #Dados iniciais da capa do processo
-        with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+        with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
             for linha in manipulador:
                 if linha[0:len('Número:')] == 'Número:':
                     self.identidade.append(linha.rstrip())
@@ -33,7 +33,7 @@ class Importar_Processo(Quebra_Identidade):
                 contador1 = contador1 + 1
         if self.identidade != []:
             if autor != '':
-                with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+                with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
                     frase = manipulador.readlines()[contador2 + 1]
                     self.identidade.append(frase.rstrip())
 
@@ -41,7 +41,7 @@ class Importar_Processo(Quebra_Identidade):
         contador1 = 0
         contador2 = 0
         if self.identidade != []:
-            with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+            with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
                 #percorrer linhas e enumera a partir de 1
                 for linha, frase in enumerate(manipulador, 1):
                     # e verifica se a frase está na linha
@@ -55,7 +55,7 @@ class Importar_Processo(Quebra_Identidade):
                         break
                     else:
                         contador1 = contador1 + 1
-            with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+            with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
                 frase = manipulador.readlines()[contador2 - 1]
                 self.identidade.append(frase.rstrip())
         self.quebra_identidade()
