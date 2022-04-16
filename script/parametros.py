@@ -27,19 +27,20 @@ class Parametros:
             for linha in manipulador:
                 #captura o tipo de cálculo
                 if 'data inicial:' in linha:
-                    if linha[40:41] == '-':
-                        break 
-                    else:
-                        #data inicial
-                        data_inicial = linha[40:50]
-                        self.converte_data(data_inicial)
-                        data_inicial = self.data_formatada
-                        #data final
-                        data_final = linha[76:86]
-                        self.converte_data(data_final)
-                        data_final = self.data_formatada
-                        dicionario = {'inicio': data_inicial, 'final' : data_final}
-                        periodo.append(dicionario)
+                    #data inicial
+                    posicao1 = len(linha) - 58 #posicao absoluta dentro da linha
+                    posicao2 = posicao1 + 10 #posicao relativa
+                    data_inicial = linha[posicao1:posicao2]#generalizar
+                    self.converte_data(data_inicial)
+                    data_inicial = self.data_formatada
+                    #data final
+                    posicao1 = len(linha) - 22
+                    posicao2 = posicao1 + 10
+                    data_final = linha[posicao1:posicao2]
+                    self.converte_data(data_final)
+                    data_final = self.data_formatada
+                    dicionario = {'inicio': data_inicial, 'final' : data_final}
+                    periodo.append(dicionario)
                 if 'Seção 4 de 19' in linha:
                     break
         print(periodo)
