@@ -4,7 +4,7 @@ class Dados_CNIS():
     def ad_cnis(self):
         self.bt_link['state'] = tk.NORMAL
         self.bt_opcoes['state'] = tk.NORMAL
-        with open("script/Dados_Import.txt", 'w', encoding="utf-8") as manipulador:
+        with open("Dados_Import.txt", 'w', encoding="utf-8") as manipulador:
             manipulador.write(self.texto_entrada.get("1.0", tk.END))
         self.analisa_cnis()
     
@@ -14,7 +14,7 @@ class Dados_CNIS():
         self.identidade_cnis = []
         contador = 0
         self.dnascimento = 'informar'
-        with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+        with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
             for linha in manipulador:
                 contador = contador + 1
                 if 'Data de nascimento:' and 'Nome da mãe:' in linha:

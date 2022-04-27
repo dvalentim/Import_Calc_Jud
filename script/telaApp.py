@@ -3,9 +3,10 @@ from cria_arquivo_txt import *
 from ident_google import *
 from decisao import *
 from deletar import *
-from parametros import *
+#from parametros import *
+from parametros import Imp_Parametros
 
-class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar, Parametros):
+class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar, Imp_Parametros):
     def __init__(self, master=None):
         # build ui
         self.base = ttk.Notebook(master)

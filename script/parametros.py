@@ -1,7 +1,8 @@
 from modulos import *
 from telaApp import *
 
-class Parametros:
+class Imp_Parametros:
+    """Cálculos de conhecimento com parâmetros informados pela Vara"""
 
     def converte_data(self, data):
         #formata o dia
@@ -23,40 +24,38 @@ class Parametros:
         data_final = ''
         periodo = []
         
-        with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+        with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
             for linha in manipulador:
                 #captura o tipo de cálculo
                 if 'data inicial:' in linha:
-                    #data inicial
-                    posicao1 = len(linha) - 58 #posicao absoluta dentro da linha
-                    posicao2 = posicao1 + 10 #posicao relativa
-                    data_inicial = linha[posicao1:posicao2]#generalizar
-                    self.converte_data(data_inicial)
-                    data_inicial = self.data_formatada
-                    #data final
-                    posicao1 = len(linha) - 22
-                    posicao2 = posicao1 + 10
-                    data_final = linha[posicao1:posicao2]
-                    self.converte_data(data_final)
-                    data_final = self.data_formatada
-                    dicionario = {'inicio': data_inicial, 'final' : data_final}
-                    periodo.append(dicionario)
-                if 'Seção 4 de 19' in linha:
-                    break
+                    if linha[40:41] == '-':
+                        break
+                    else:
+                        #data inicial
+                        posicao1 = len(linha) - 58 #posicao absoluta dentro da linha
+                        posicao2 = posicao1 + 10 #posicao relativa
+                        data_inicial = linha[posicao1:posicao2]#generalizar
+                        self.converte_data(data_inicial)
+                        data_inicial = self.data_formatada
+                        #data final
+                        posicao1 = len(linha) - 22
+                        posicao2 = posicao1 + 10
+                        data_final = linha[posicao1:posicao2]
+                        self.converte_data(data_final)
+                        data_final = self.data_formatada
+                        dicionario = {'inicio': data_inicial, 'final' : data_final}
+                        periodo.append(dicionario)
+                    if 'Seção 4 de 19' in linha:
+                        break
         print(periodo)
 
-
-                        
-
-        
-
-        
+     
     def variaveis_iniciais(self):
 
         self.vtipo_calculo = ''
         self.vdib = ''
         self.vespecie = ''
-        with open("script/Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
+        with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
             for linha in manipulador:
                 #captura o tipo de cálculo
                 if 'Tipo de cálculo:' in linha:
@@ -84,7 +83,7 @@ class Parametros:
 
 
     def exp_parametros(self):
-        with open("script/Dados_Import.txt", 'w', encoding="utf-8") as manipulador:
+        with open("Dados_Import.txt", 'w', encoding="utf-8") as manipulador:
             manipulador.write(self.texto_entrada_parametros.get("1.0", tk.END))
         self.variaveis_iniciais()
         self.periodo_especial()
