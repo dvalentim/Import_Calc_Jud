@@ -3,6 +3,10 @@ from telaApp import *
 
 class Imp_Parametros:
     """Cálculos de conhecimento com parâmetros informados pela Vara"""
+    def del_parametros(self):
+        self.texto_entrada_parametros.delete("1.0", tk.END)
+        self.texto_saida_parametros.delete("1.0", tk.END)
+        self.texto_saida_parametros.insert(tk.END, f'Saídas...')
 
     def converte_data(self, data):
         #formata o dia
@@ -22,7 +26,7 @@ class Imp_Parametros:
     def periodo_especial(self):
         data_inicial = ''
         data_final = ''
-        periodo = []
+        self.periodo = []
         
         with open("Dados_Import.txt", 'r', encoding="utf-8") as manipulador:
             for linha in manipulador:
@@ -44,10 +48,11 @@ class Imp_Parametros:
                         self.converte_data(data_final)
                         data_final = self.data_formatada
                         dicionario = {'inicio': data_inicial, 'final' : data_final}
-                        periodo.append(dicionario)
+                        self.periodo.append(dicionario)
                     if 'Seção 4 de 19' in linha:
                         break
-        print(periodo)
+        print(self.periodo)
+        self.texto_saida_parametros.insert(tk.END, f'Período Especial......: {self.periodo}\n')
 
      
     def variaveis_iniciais(self):
@@ -80,6 +85,11 @@ class Imp_Parametros:
         print(self.vtipo_calculo)
         print(self.vdib)
         print(self.vespecie)
+        self.texto_saida_parametros.delete("1.0", tk.END)
+        self.texto_saida_parametros.insert(tk.END, f'Tipo de Cálculo.......: {self.vtipo_calculo}\n')
+        self.texto_saida_parametros.insert(tk.END, f'DIB...................: {self.vdib}\n')
+        self.texto_saida_parametros.insert(tk.END, f'Espécie do benefício..: {self.vespecie}\n')
+        
 
 
     def exp_parametros(self):

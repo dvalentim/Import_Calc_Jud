@@ -97,7 +97,7 @@ class TelaApp(Cria_Arquivo_Txt, Id_Google, Decisao, Deletar, Imp_Parametros):
         self.bt_export_parametros.pack(padx='5', side='left')
         self.bt_export_parametros.configure(command=self.exp_parametros)
         self.bt_apagar_parametros = ttk.Button(self.frame1)
-        self.bt_apagar_parametros.configure(text='Apagar')
+        self.bt_apagar_parametros.configure(text='Apagar', command=self.del_parametros)
         self.bt_apagar_parametros.pack(padx='5', side='left')
         self.frame1.configure(height='200', width='200')
         self.frame1.pack(side='top')
